@@ -21,9 +21,12 @@ class LoginController extends Controller
      *
      * Middleware Guest
      *
+     *
+     *
      * @Post("/auth/login")
      * @Request({"email": "email", "password": "string"})
      * @Response(200, body={"status": "ok", "token": "token", "expires_in": "ttl in minutes"})
+     * @Response(401, body={"status": "ok", "message": "Incorrect Credentials"})
      *
      */
     public function login(LoginRequest $request, JWTAuth $JWTAuth)
